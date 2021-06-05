@@ -1,28 +1,3 @@
-/*
-import logo from './logo.svg';
-import Button from '@material-ui/core/Button'
-import './App.css';
-
-<div className="App">
-  <header className="App-header">
-    <h1>Projeto Karangos</h1>
-    <Button variant="contained" color="primary">Clique aqui</Button>
-    <img src={logo} className="App-logo" alt="logo" />
-    <p>
-      Edit <code>src/App.js</code> and save to reload.
-    </p>
-    <a
-      className="App-link"
-      href="https://reactjs.org"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      Learn React
-    </a>
-  </header>
-</div>
-*/
-
 import TopBar from './ui/TopBar'
 import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles'
 import yellow from '@material-ui/core/colors/yellow'
@@ -30,10 +5,9 @@ import pink from '@material-ui/core/colors/pink'
 import FooterBar from './ui/FooterBar'
 import {Box} from '@material-ui/core'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import KaragonsList from './routed/KarangosList'
+// import KaragonsList from './routed/KarangosList'
+import KaragonsList from './routed/KarangosList2'
 import KaragonsForm from './routed/KarangosForm'
-
-
 
 const useStyles = makeStyles((theme) => ({
   box: {
@@ -72,6 +46,12 @@ function Main() {
               <KaragonsList />
             </Route>
             <Route path="/new">
+              <KaragonsForm />
+            </Route>
+            <Route path="/edit/:id">
+              {/* 
+                id: é um parâmetro (nomes de parâmetros começam com dois pontos)
+              */}
               <KaragonsForm />
             </Route>
           </Switch>
